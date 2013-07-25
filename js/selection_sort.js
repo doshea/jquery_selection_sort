@@ -8,7 +8,9 @@ function grab_and_clean_text(callback){
     hipster_text = hipster_text.replace(/<p>/g, "");
     hipster_text = hipster_text.replace(/<\/p>/g, "");
     //Replace line breaks with newlines
-    cleaned_text = hipster_text.replace(/(\r\n|\n|\r)/gm," ");
+    hipster_text = hipster_text.replace(/(\r\n|\n|\r)/gm," ");
+    //Remove duplicate spaces
+    cleaned_text = hipster_text.replace(/  /g, ' ');
   }).done(callback);
 }
 
